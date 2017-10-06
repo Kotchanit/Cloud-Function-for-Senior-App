@@ -1,0 +1,44 @@
+[debug] [2017-10-06T12:47:51.366Z] ----------------------------------------------------------------------
+[debug] [2017-10-06T12:47:51.369Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only functions
+[debug] [2017-10-06T12:47:51.369Z] CLI Version:   3.12.0
+[debug] [2017-10-06T12:47:51.369Z] Platform:      darwin
+[debug] [2017-10-06T12:47:51.370Z] Node Version:  v6.11.3
+[debug] [2017-10-06T12:47:51.370Z] Time:          Fri Oct 06 2017 19:47:51 GMT+0700 (+07)
+[debug] [2017-10-06T12:47:51.370Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-10-06T12:47:51.384Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-10-06T12:47:51.384Z] > authorizing via signed-in user
+[debug] [2017-10-06T12:47:51.387Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/regdemo-8a574  
+ Fri Oct 06 2017 19:47:51 GMT+0700 (+07)
+[debug] [2017-10-06T12:47:52.497Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-06T12:47:52.499Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/regdemo-8a574/tokens  
+ Fri Oct 06 2017 19:47:52 GMT+0700 (+07)
+[debug] [2017-10-06T12:47:53.467Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'regdemo-8a574'...
+[info] 
+[info] i  deploying functions
+[debug] [2017-10-06T12:47:55.982Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "dependencies": {
+    "firebase-admin": "~5.2.1",
+    "firebase-functions": "^0.6.2"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[info] i  runtimeconfig: ensuring necessary APIs are enabled...
+[debug] [2017-10-06T12:47:55.983Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/regdemo-8a574?view=CONSUMER_VIEW  
+ Fri Oct 06 2017 19:47:55 GMT+0700 (+07)
+[debug] [2017-10-06T12:47:55.984Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/regdemo-8a574?view=CONSUMER_VIEW  
+ Fri Oct 06 2017 19:47:55 GMT+0700 (+07)
+[debug] [2017-10-06T12:47:57.578Z] <<< HTTP RESPONSE 200
+[info] ✔  runtimeconfig: all necessary APIs are enabled
+[debug] [2017-10-06T12:47:57.647Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2017-10-06T12:47:57.648Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/regdemo-8a574  
+ Fri Oct 06 2017 19:47:57 GMT+0700 (+07)
+[debug] [2017-10-06T12:47:57.649Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/regdemo-8a574/apiKeys  
+ Fri Oct 06 2017 19:47:57 GMT+0700 (+07)
+[debug] [2017-10-06T12:47:59.035Z] <<< HTTP RESPONSE 200

@@ -1,0 +1,49 @@
+[debug] [2017-10-06T11:32:05.433Z] ----------------------------------------------------------------------
+[debug] [2017-10-06T11:32:05.436Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only functions
+[debug] [2017-10-06T11:32:05.436Z] CLI Version:   3.12.0
+[debug] [2017-10-06T11:32:05.436Z] Platform:      darwin
+[debug] [2017-10-06T11:32:05.436Z] Node Version:  v6.11.3
+[debug] [2017-10-06T11:32:05.437Z] Time:          Fri Oct 06 2017 18:32:05 GMT+0700 (+07)
+[debug] [2017-10-06T11:32:05.437Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-10-06T11:32:05.501Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-10-06T11:32:05.501Z] > authorizing via signed-in user
+[debug] [2017-10-06T11:32:05.503Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-10-06T11:32:05.503Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/m1wuxLHW4EirAIHQ9rxP1Y3CuOAcoFjwEuX0bLUW1XFOv12CH0SC1UVmVPQ6T6no',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Fri Oct 06 2017 18:32:05 GMT+0700 (+07)
+[debug] [2017-10-06T11:32:05.753Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-06T11:32:05.890Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/regdemo-8a574  
+ Fri Oct 06 2017 18:32:05 GMT+0700 (+07)
+[debug] [2017-10-06T11:32:07.014Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-06T11:32:07.015Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/regdemo-8a574/tokens  
+ Fri Oct 06 2017 18:32:07 GMT+0700 (+07)
+[debug] [2017-10-06T11:32:07.931Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'regdemo-8a574'...
+[info] 
+[info] i  deploying functions
+[debug] [2017-10-06T11:32:10.596Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "dependencies": {
+    "firebase-admin": "~5.2.1",
+    "firebase-functions": "^0.6.2"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[info] i  runtimeconfig: ensuring necessary APIs are enabled...
+[debug] [2017-10-06T11:32:10.598Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/regdemo-8a574?view=CONSUMER_VIEW  
+ Fri Oct 06 2017 18:32:10 GMT+0700 (+07)
+[debug] [2017-10-06T11:32:10.598Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/regdemo-8a574?view=CONSUMER_VIEW  
+ Fri Oct 06 2017 18:32:10 GMT+0700 (+07)
+[debug] [2017-10-06T11:33:25.909Z] Error: connect ETIMEDOUT 74.125.200.95:443
+    at Object.exports._errnoException (util.js:1020:11)
+    at exports._exceptionWithHostPort (util.js:1043:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1086:14)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 74.125.200.95:443
