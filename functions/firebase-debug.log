@@ -42,3 +42,55 @@
 [debug] [2017-10-06T12:47:57.649Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/regdemo-8a574/apiKeys  
  Fri Oct 06 2017 19:47:57 GMT+0700 (+07)
 [debug] [2017-10-06T12:47:59.035Z] <<< HTTP RESPONSE 200
+[info] 
+
+There was an issue deploying your functions. Verify that your project has a Google App Engine instance setup at https://console.cloud.google.com/appengine and try again. If this issue persists, please contact support.
+[debug] [2017-10-06T12:49:13.494Z] Error: connect ETIMEDOUT 74.125.200.95:443
+    at Object.exports._errnoException (util.js:1020:11)
+    at exports._exceptionWithHostPort (util.js:1043:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1086:14)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 74.125.200.95:443
+[debug] [2017-10-06T12:51:47.128Z] ----------------------------------------------------------------------
+[debug] [2017-10-06T12:51:47.131Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only functions
+[debug] [2017-10-06T12:51:47.132Z] CLI Version:   3.12.0
+[debug] [2017-10-06T12:51:47.132Z] Platform:      darwin
+[debug] [2017-10-06T12:51:47.132Z] Node Version:  v6.11.3
+[debug] [2017-10-06T12:51:47.145Z] Time:          Fri Oct 06 2017 19:51:47 GMT+0700 (+07)
+[debug] [2017-10-06T12:51:47.146Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-10-06T12:51:47.262Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-10-06T12:51:47.262Z] > authorizing via signed-in user
+[debug] [2017-10-06T12:51:47.265Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/regdemo-8a574  
+ Fri Oct 06 2017 19:51:47 GMT+0700 (+07)
+[debug] [2017-10-06T12:51:48.495Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-06T12:51:48.496Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/regdemo-8a574/tokens  
+ Fri Oct 06 2017 19:51:48 GMT+0700 (+07)
+[debug] [2017-10-06T12:51:49.445Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'regdemo-8a574'...
+[info] 
+[info] i  deploying functions
+[debug] [2017-10-06T12:51:52.041Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "dependencies": {
+    "firebase-admin": "~5.2.1",
+    "firebase-functions": "^0.6.2"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[info] i  runtimeconfig: ensuring necessary APIs are enabled...
+[debug] [2017-10-06T12:51:52.044Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/regdemo-8a574?view=CONSUMER_VIEW  
+ Fri Oct 06 2017 19:51:52 GMT+0700 (+07)
+[debug] [2017-10-06T12:51:52.044Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/regdemo-8a574?view=CONSUMER_VIEW  
+ Fri Oct 06 2017 19:51:52 GMT+0700 (+07)
+[debug] [2017-10-06T12:51:53.656Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2017-10-06T12:53:08.920Z] Error: connect ETIMEDOUT 74.125.200.95:443
+    at Object.exports._errnoException (util.js:1020:11)
+    at exports._exceptionWithHostPort (util.js:1043:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1086:14)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 74.125.200.95:443
