@@ -7,17 +7,17 @@ admin.initializeApp(functions.config().firebase);
 const database = admin.database()
 
 
-exports.messagesComing = functions.database.ref('/chatrooms/{chatroomID}/messages/').onUpdate(event => {
+exports.messagesComing = functions.database.ref('/chatrooms/{chatroomID}/messages/{messageID}').onCreate(event => {
     const chatroomID = event.params.chatroomID;
+    const messageID = event.params.messageID;
     const message = event.data.val();
 
     console.log("***** data is coming *****");
     console.log(chatroomID);
+    console.log(messageID);
     console.log(message);
 
-    // database.ref('users').child('').child('data').child('fcmtoken').once('value', function(snapshot) {
-    //database.ref('users').queryOrdered().queryEqual(true)
-    firebase.database.ref().child('users').isEqual('chatrooms/'+chatroomID).once('value', function(snapshot) {
+    firebase.database.ref('users').orderByChild('chatrooms/'+chatroomID).isEqual(true).on("child_added", function(snapshot) {
       const user = snapshot.val();
       if (snapshot.key() == message.senderID) {
         return;
@@ -27,7 +27,8 @@ exports.messagesComing = functions.database.ref('/chatrooms/{chatroomID}/message
         console.log(fcmToken);
         sendMessageNotification(message, fcmToken)
     });
-})
+});
+
 
 function sendMessageNotification(message, fcmToken){
     const payload = {
@@ -37,4 +38,4 @@ function sendMessageNotification(message, fcmToken){
         badge: "0"
     }};
     admin.messaging().sendToDevice(fcmToken, payload)
-}
+  }
