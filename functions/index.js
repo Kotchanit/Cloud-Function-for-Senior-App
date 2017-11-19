@@ -22,14 +22,20 @@ exports.messagesComing = functions.database.ref('/chatrooms/{chatroomID}/message
         const userData = userSnapshot.val().data;
         if (userID != message.senderID && userData.hasOwnProperty('fcmtoken')) {
           let token = userData.fcmtoken;
-          sendMessageNotification(message, token);
+          if (message.mediaType == "PHOTO") {
+            sendPhotoMessageNotification(message, token)
+          } else if (message.mediaType == "VIDEO") {
+            sendVideoMessageNotification(message, token)
+          } else {
+            sendMessageNotification(message, token);
+          }
         }
       });
     });
 });
 
 
-function sendMessageNotification(message, fcmToken){
+function sendTextMessageNotification(message, fcmToken){
     const payload = {
       notification: {
         title: message.senderName,
@@ -47,3 +53,43 @@ function sendMessageNotification(message, fcmToken){
           console.log('Error sending message:', error);
       });
   }
+
+
+
+  function sendPhotoMessageNotification(message, fcmToken){
+      const payload = {
+        notification: {
+          title: message.senderName,
+          body: "send you a photo",
+          sound: "activated",
+          badge: "0"
+        }
+      };
+      console.log(payload);
+      admin.messaging().sendToDevice(fcmToken, payload)
+        .then(function (response) {
+          console.log('Successfully sent message:', response);
+        })
+        .catch(function (error) {
+            console.log('Error sending message:', error);
+        });
+    }
+
+    function sendVideoMessageNotification(message, fcmToken){
+        const payload = {
+          notification: {
+            title: message.senderName,
+            body: "send you a video",
+            sound: "activated",
+            badge: "0"
+          }
+        };
+        console.log(payload);
+        admin.messaging().sendToDevice(fcmToken, payload)
+          .then(function (response) {
+            console.log('Successfully sent message:', response);
+          })
+          .catch(function (error) {
+              console.log('Error sending message:', error);
+          });
+      }
