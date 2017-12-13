@@ -27,7 +27,7 @@ exports.messagesComing = functions.database.ref('/chatrooms/{chatroomID}/message
           } else if (message.mediaType == "VIDEO") {
             sendVideoMessageNotification(message, token)
           } else {
-            sendMessageNotification(message, token);
+            sendTextMessageNotification(message, token);
           }
         }
       });
